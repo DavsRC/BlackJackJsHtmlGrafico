@@ -1,3 +1,24 @@
+// We edit the canvas with high resolution
+var canvas = document.getElementById("canvas");
+canvas.width = 1220 * 2;
+canvas.height = 400 * 2;
+canvas.style.width = 1220 + "px";
+canvas.style.height = 400 + "px";
+var ctx = canvas.getContext("2d");
+
+// Classe card
+class card {
+	static x = 50;
+	static y = 50;
+
+	constructor(valor, palo) {
+		this.img = new Image();
+		this.valor = valor;
+		this.palo = palo;
+	}
+}
+
+
 function askForCard() {
 	// We put a maximum of cards that you can make so that the dealer can also draw his
 	if (indiceCarta < 8) {
