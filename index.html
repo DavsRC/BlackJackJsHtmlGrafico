@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" />
-		<title>Sufka U</title>
-	</head>
 
-	<body>
-		<div id="title">Blackjack Game By Sofka U</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Sofka U</title>
+</head>
+
+<body>
+	<div class="card bg-dark">
+		<h5 class="text-center text-white fs-1">Blackjack Game By Sofka U</h5>
+	</div>
+	</div>
+	<div class="container-md-fluid bg-dark">
 		<div id="canvasDiv"><canvas id="canvas"></canvas></div>
-		<div id="botones">
-			<input type="button" value="Give me a Card" onclick="askForCard()" id="giveMe" class="button" >
-            <input type="button" value="Play Again!" id="reset" onclick="playagain()" >
-            <input type="button" value="Stay" onclick="stay()" id="stay" class="button" >
+	</div>
+
+	<div class="container-md-fluid bg-dark">
+		<div class="row">
+		  <div class="col text-center d-grid gap-2">
+			<button type="button" class="btn btn-success" onclick="askForCard()" id="giveMe">Give Me a card</button>
+		  </div>
+		  <div class="col text-center d-grid gap-2">
+			<button type="button" class="btn btn-primary" id="reset" onclick="playagain()">Play Again!</button>
+		  </div>
+		  <div class="col text-center d-grid gap-2">
+			<button type="button" class="btn btn-danger" onclick="stay()" id="stay">Stay</button>
+		  </div>
 		</div>
+
+	<div class="container-md-fluid bg-dark text-white">
 		<div id="info"></div>
-		<script src="js/blackjack.js"></script>
-	</body>
+	</div>
+	<script src="js/blackjack.js"></script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+	crossorigin="anonymous"></script>
+
 </html>
