@@ -46,3 +46,8 @@ function stay() {
 		info.innerHTML += "<br><b>You've won!!!</b>";
 	}
 }
+
+//Reload the page
+function playagain() {
+	location.reload(true);
+}
