@@ -31,13 +31,30 @@ for (i = 0; i < 4; i++) {
 	}
 }
 
+//Shuffle the cards
+for (i = 0; i < 100; i++) {
+	cards.splice(Math.random() * 52, 0, cards[0]);
+	cards.shift();
+}
+
+function drawingCards(CJ) {
+	// We have to first load the card and then add the src
+	// If we don't add this, the card will not load in the page
+	CJ.img.onload = () => {
+		ctx.drawImage(CJ.img, card.x, card.y, 239, 335);
+		card.x += 300;
+	};
+	// To load the correct image we concatenate the number and the suit, which coincides with the file name
+	CJ.img.src = "images/cards/" + CJ.valor.toString() + CJ.palo + ".svg";
+}
+
 function askForCard() {
 	// We put a maximum of cards that you can make so that the dealer can also draw his
-	if (indiceCarta < 8) {
-		let CJ = cartas[indiceCarta]; //Card played
-		cartasJugador.push(CJ);
-		dibujarCarta(CJ);
-		indiceCarta++;
+	if (cardIndex < 8) {
+		let CJ = cards[cardIndex]; //Card played
+		playerCards.push(CJ);
+		drawingCards(CJ);
+		cardIndex++;
 	}
 }
 
@@ -49,22 +66,22 @@ function stay() {
 	let pointsCrupier = 0;
 	let info = document.getElementById("info");
 	// We count and print the player's points
-	for (i in cartasJugador) {
-		pointsUser += cartasJugador[i].valor;
+	for (i in playerCards) {
+		pointsUser += playerCards[i].valor;
 	}
 	// We draw cards to the crupier and count his points
 	while (pointsCrupier < 17) {
-		cartasCrupier.push(cartas[indiceCarta]);
-		pointsCrupier += cartas[indiceCarta].valor;
-		indiceCarta++;
+		crupierCards.push(cards[cardIndex]);
+		pointsCrupier += cards[cardIndex].valor;
+		cardIndex++;
 	}
 	// Points of the game are put in info
 	info.innerHTML = "Puntuación jugador: " + pointsUser + "<br>Puntuación crupier: " + pointsCrupier;
 	// We draw the crupier cards
-	carta.x = 50;
-	carta.y = 400;
-	for (i in cartasCrupier) {
-		dibujarCarta(cartasCrupier[i]);
+	card.x = 50;
+	card.y = 400;
+	for (i in crupierCards) {
+		drawingCards(crupierCards[i]);
 	}
 	// We check winner
 	if (pointsUser == 21) {
