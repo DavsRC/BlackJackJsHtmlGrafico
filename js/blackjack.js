@@ -18,6 +18,18 @@ class card {
 	}
 }
 
+// Variables we are going to use
+var cards = [];
+var playerCards = [];
+var crupierCards = [];
+var cardIndex = 0;
+var palos = ["S", "H", "D", "C"];
+// Generate the cards. With attributes value and palo
+for (i = 0; i < 4; i++) {
+	for (j = 1; j <= 13; j++) {
+		cards.push(new card(j, palos[i]));
+	}
+}
 
 function askForCard() {
 	// We put a maximum of cards that you can make so that the dealer can also draw his
