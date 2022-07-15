@@ -76,7 +76,7 @@ function stay() {
 		cardIndex++;
 	}
 	// Points of the game are put in info
-	info.innerHTML = "Puntuación jugador: " + pointsUser + "<br>Puntuación crupier: " + pointsCrupier;
+	info.innerHTML = "Players Points: " + pointsUser + "<br>Crupier Points: " + pointsCrupier;
 	// We draw the crupier cards
 	card.x = 50;
 	card.y = 400;
@@ -85,7 +85,7 @@ function stay() {
 	}
 	// We check winner
 	if (pointsUser == 21) {
-		info.innerHTML +="<br><b>Blackjack!!! You WIn!!!</b>";
+		info.innerHTML +="<br><b>Blackjack!!! You Win!!!</b>";
 	} else if (pointsUser > 21) {
 		info.innerHTML +="<br><b>You have lost... You have exceeded points</b>";
 	} else if (pointsCrupier > 21) {
